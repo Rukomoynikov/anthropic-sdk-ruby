@@ -9,7 +9,6 @@
 require "digest"
 require "singleton"
 
-require "async"
 require "minitest/autorun"
 require "minitest/focus"
 require "minitest/hooks/test"
@@ -58,17 +57,8 @@ class Minitest::Test
 end
 
 class Anthropic::Test::ResourceTest < Minitest::Test
-  def async?
-    return @async unless @async.nil?
-    @async = Digest::SHA256.hexdigest(self.class.name).to_i(16).odd?
-  end
-
   def before_all
     super
     @anthropic = Anthropic::Test::SingletonClient.instance
   end
-
-  def around_all = async? ? Sync { super } : super
-
-  def around = async? ? Async { super }.wait : super
 end
