@@ -25,7 +25,6 @@ group :development, :test do
 end
 
 group :development, :docs do
-  gem "redcarpet"
   gem "webrick"
   gem "yard"
 end

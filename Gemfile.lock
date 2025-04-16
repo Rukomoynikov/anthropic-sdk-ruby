@@ -121,7 +121,6 @@ GEM
       sorbet-runtime (>= 0.5.9204)
     rbs (3.9.2)
       logger
-    redcarpet (3.6.1)
     regexp_parser (2.10.0)
     rubocop (1.75.1)
       json (~> 2.3)
@@ -218,7 +217,6 @@ DEPENDENCIES
   minitest-rg
   rake
   rbs
-  redcarpet
   rubocop
   sorbet
   steep
